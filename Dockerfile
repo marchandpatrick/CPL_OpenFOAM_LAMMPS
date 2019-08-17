@@ -12,12 +12,12 @@ RUN git clone https://github.com/marchandpatrick/lammps.git /lammps &&  \
 # library for lammps USER-VTK
 RUN apt-get update &&  apt-get install -y apt-utils &&  apt-get install -y libvtk6-dev
 
-RUN ls /usr/include/vtk*
+RUN ls /usr/include
 
 RUN cd /lammps/src && \
     make yes-USER-VTK && \
-    make USER-VTK && \
-    make mpi
+    make USER-VTK 
+# &&    make mpi
 
 
 #Build LAMMPS with USER-CPL package from APP 
