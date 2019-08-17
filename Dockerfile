@@ -10,7 +10,9 @@ RUN git clone https://github.com/marchandpatrick/lammps.git /lammps &&  \
     git clone https://github.com/marchandpatrick/CPL_APP_LAMMPS-DEV.git /CPL_APP_LAMMPS-DEV
 
 # library for lammps USER-VTK
-RUN apt-get update &&  apt-get install -y libvtk6-dev && ls /usr/include/vtk*
+RUN apt-get update &&  apt-get install -y apt-utils &&  apt-get install -y libvtk6-dev
+
+RUN ls /usr/include/vtk*
 
 RUN cd /lammps/src && \
     make yes-USER-VTK && \
