@@ -6,12 +6,11 @@ MAINTAINER Edward Smith <edward.smith05@imperial.ac.uk>
 ENV NPROCS=1
 
 #Get LAMMPS
-RUN git clone https://github.com/lammps/lammps.git /lammps &&  \
-    git clone https://github.com/Crompulence/CPL_APP_LAMMPS-DEV.git /CPL_APP_LAMMPS-DEV
+RUN git clone https://github.com/marchandpatrick/lammps.git /lammps &&  \
+    git clone https://github.com/marchandpatrick/CPL_APP_LAMMPS-DEV.git /CPL_APP_LAMMPS-DEV
 
 # library for lammps USER-VTK
-RUN apt-get update && apt-get install -y \
-    libvtk7-dev
+RUN apt-get update && apt-get install -y libvtk7-dev
 
 #Build LAMMPS with USER-CPL package from APP 
 WORKDIR /CPL_APP_LAMMPS-DEV
