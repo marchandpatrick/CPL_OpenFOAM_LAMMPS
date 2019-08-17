@@ -12,7 +12,7 @@ RUN git clone https://github.com/marchandpatrick/lammps.git /lammps &&  \
 # library for lammps USER-VTK
 RUN apt-get update && apt-get install -y libvtk6-dev
 
-RUN cd /lammps/lib && \
+RUN cd /lammps/src && \
     make yes-USER-VTK && \
     make mpi
 
