@@ -15,7 +15,7 @@ RUN apt-get update &&  apt-get install -y libvtk6-dev
 RUN cd /lammps/src && \
     make yes-USER-VTK && \
     make USER-VTK && \
-    make serial
+    make mpi
 
 
 #Build LAMMPS with USER-CPL package from APP 
